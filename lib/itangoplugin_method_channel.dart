@@ -17,9 +17,25 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
 
   @override
   Future<String?> doPing(String params) async {
-    final result = await methodChannel.invokeMethod<String>(
-        'doPing', params
-    );
+    final result = await methodChannel.invokeMethod<String>('doPing', params);
+    return result;
+  }
+
+  @override
+  Future<String?> doDns(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doDns', params);
+    return result;
+  }
+
+  @override
+  Future<String?> doTcp(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doTcp', params);
+    return result;
+  }
+
+  @override
+  Future<String?> doUdp(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doUdp', params);
     return result;
   }
 }

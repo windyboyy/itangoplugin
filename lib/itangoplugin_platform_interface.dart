@@ -30,4 +30,16 @@ abstract class ItangopluginPlatform extends PlatformInterface {
   Future<String?> doPing(String params) {
     throw UnimplementedError('doPing() has not been implemented.');
   }
+
+  Future<String?> doDns(String params) {
+    throw UnimplementedError('doDns() has not been implemented.');
+  }
+
+  Future<String?> doTcp(String params) {
+    throw UnimplementedError('doTcp() has not been implemented.');
+  }
+
+  Future<String?> doUdp(String params) {
+    throw UnimplementedError('doUdp() has not been implemented.');
+  }
 }
