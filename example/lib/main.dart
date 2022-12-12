@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -30,9 +32,21 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
+    var data = {
+      "TargetHost": "8.8.8.8",
+      "Af": 4,
+      "Options": {
+        "protocol": "udp",
+        "count": 3,
+        "interval": 0.2,
+        "size": 64,
+        "timeout": 2,
+      }
+    };
+    String params = jsonEncode(data);
     try {
       platformVersion =
-          await _itangopluginPlugin.getPlatformVersion() ?? 'Unknown platform version';
+          await _itangopluginPlugin.doPing(params) ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

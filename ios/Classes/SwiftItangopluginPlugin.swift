@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import Itangosdk
 
 public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -9,6 +10,12 @@ public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    var params = call.arguments as! String
+    switch call.method {
+        case "doPing":
+            result(ItangosdkInvoke().ping(params))
+        default:
+            result("iOS " + UIDevice.current.systemVersion)
+    }
   }
 }

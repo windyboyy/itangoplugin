@@ -14,4 +14,12 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<String?> doPing(String params) async {
+    final result = await methodChannel.invokeMethod<String>(
+        'doPing', params
+    );
+    return result;
+  }
 }

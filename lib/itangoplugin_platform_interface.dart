@@ -26,4 +26,8 @@ abstract class ItangopluginPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<String?> doPing(String params) {
+    throw UnimplementedError('doPing() has not been implemented.');
+  }
 }
