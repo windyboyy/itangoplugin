@@ -14,6 +14,12 @@ public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
     switch call.method {
         case "doPing":
             result(ItangosdkInvoke().ping(params))
+        case "doDns":
+            result(ItangosdkInvoke().dns(params))
+        case "doTcp":
+            result(ItangosdkInvoke().tcp(params))
+        case "doUdp":
+            result(ItangosdkInvoke().udp(params))
         default:
             result("iOS " + UIDevice.current.systemVersion)
     }

@@ -72,9 +72,12 @@
 
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
 - (nonnull instancetype)init;
+- (NSString* _Nonnull)dns:(NSString* _Nullable)data;
 - (NSString* _Nonnull)mtr:(NSString* _Nullable)data;
 - (NSString* _Nonnull)ping:(NSString* _Nullable)data;
+- (NSString* _Nonnull)tcp:(NSString* _Nullable)data;
 - (NSString* _Nonnull)test:(NSString* _Nullable)data;
+- (NSString* _Nonnull)udp:(NSString* _Nullable)data;
 @end
 
 /**
@@ -231,7 +234,5 @@ FOUNDATION_EXPORT ItangosdkTraceroute* _Nullable ItangosdkNewTraceroute(void);
  * NewUdpPort 实例化
  */
 FOUNDATION_EXPORT ItangosdkUdpPort* _Nullable ItangosdkNewUdpPort(void);
-
-FOUNDATION_EXPORT NSString* _Nonnull ItangosdkSayHi(NSString* _Nullable text);
 
 #endif
