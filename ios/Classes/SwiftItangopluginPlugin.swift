@@ -10,7 +10,7 @@ public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    var params = call.arguments as! String
+    let params = call.arguments as! String
     switch call.method {
         case "doPing":
             result(ItangosdkInvoke().ping(params))
