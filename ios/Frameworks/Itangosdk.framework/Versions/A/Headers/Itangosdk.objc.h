@@ -12,6 +12,7 @@
 
 
 @class ItangosdkDns;
+@class ItangosdkGoMobileLib;
 @class ItangosdkHttp;
 @class ItangosdkInvoke;
 @class ItangosdkMtr;
@@ -34,6 +35,18 @@
  */
 - (nullable instancetype)init;
 // skipped method Dns.Run with unsupported parameter or return types
+
+@end
+
+@interface ItangosdkGoMobileLib : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+- (nonnull instancetype)init;
+- (NSString* _Nonnull)ping:(NSString* _Nullable)data;
+- (NSString* _Nonnull)text:(NSString* _Nullable)text;
+// skipped method GoMobileLib.Text1 with unsupported parameter or return types
 
 @end
 
