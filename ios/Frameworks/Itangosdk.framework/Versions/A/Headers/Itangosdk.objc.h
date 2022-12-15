@@ -12,7 +12,6 @@
 
 
 @class ItangosdkDns;
-@class ItangosdkGoMobileLib;
 @class ItangosdkHttp;
 @class ItangosdkInvoke;
 @class ItangosdkMtr;
@@ -38,18 +37,6 @@
 
 @end
 
-@interface ItangosdkGoMobileLib : NSObject <goSeqRefInterface> {
-}
-@property(strong, readonly) _Nonnull id _ref;
-
-- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
-- (nonnull instancetype)init;
-- (NSString* _Nonnull)ping:(NSString* _Nullable)data;
-- (NSString* _Nonnull)text:(NSString* _Nullable)text;
-// skipped method GoMobileLib.Text1 with unsupported parameter or return types
-
-@end
-
 /**
  * Http 逻辑体
  */
@@ -66,17 +53,34 @@
 
 @end
 
+/**
+ * Invoke app调用
+ */
 @interface ItangosdkInvoke : NSObject <goSeqRefInterface> {
 }
 @property(strong, readonly) _Nonnull id _ref;
 
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
 - (nonnull instancetype)init;
+/**
+ * Dns dns
+ */
 - (NSString* _Nonnull)dns:(NSString* _Nullable)data;
+/**
+ * Mtr mtr
+ */
 - (NSString* _Nonnull)mtr:(NSString* _Nullable)data;
+/**
+ * Ping ping
+ */
 - (NSString* _Nonnull)ping:(NSString* _Nullable)data;
+/**
+ * Tcp tcp
+ */
 - (NSString* _Nonnull)tcp:(NSString* _Nullable)data;
-- (NSString* _Nonnull)test:(NSString* _Nullable)data;
+/**
+ * Udp udp
+ */
 - (NSString* _Nonnull)udp:(NSString* _Nullable)data;
 @end
 
