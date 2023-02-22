@@ -21,4 +21,8 @@ class Itangoplugin {
   Future<String?> doUdp(String params) {
     return ItangopluginPlatform.instance.doUdp(params);
   }
+
+  Future<String?> doMtr(String params) {
+    return ItangopluginPlatform.instance.doMtr(params);
+  }
 }
