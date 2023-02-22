@@ -10,6 +10,36 @@ class MockItangopluginPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<String?> doDns(String params) {
+    // TODO: implement doDns
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> doMtr(String params) {
+    // TODO: implement doMtr
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> doPing(String params) {
+    // TODO: implement doPing
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> doTcp(String params) {
+    // TODO: implement doTcp
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> doUdp(String params) {
+    // TODO: implement doUdp
+    throw UnimplementedError();
+  }
 }
 
 void main() {

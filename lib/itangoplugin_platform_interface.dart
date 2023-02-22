@@ -42,4 +42,8 @@ abstract class ItangopluginPlatform extends PlatformInterface {
   Future<String?> doUdp(String params) {
     throw UnimplementedError('doUdp() has not been implemented.');
   }
+
+  Future<String?> doMtr(String params) {
+    throw UnimplementedError('doMtr() has not been implemented.');
+  }
 }

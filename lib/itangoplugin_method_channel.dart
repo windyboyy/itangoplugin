@@ -38,4 +38,10 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
     final result = await methodChannel.invokeMethod<String>('doUdp', params);
     return result;
   }
+
+  @override
+  Future<String?> doMtr(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doMtr', params);
+    return result;
+  }
 }

@@ -20,6 +20,8 @@ public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
             result(ItangosdkInvoke().tcp(params))
         case "doUdp":
             result(ItangosdkInvoke().udp(params))
+        case "doMtr":
+            result(ItangosdkInvoke().mtr(params))
         default:
             result("iOS " + UIDevice.current.systemVersion)
     }
