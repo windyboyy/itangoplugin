@@ -41,7 +41,7 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
 
   @override
   Future<String?> doMtr(String params) async {
-    // v8
+    // v9
     final result = await methodChannel.invokeMethod<String>('doMtr', params);
     return result;
   }
