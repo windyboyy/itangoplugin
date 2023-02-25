@@ -23,6 +23,7 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
 
   @override
   Future<String?> doDns(String params) async {
+    // v1
     final result = await methodChannel.invokeMethod<String>('doDns', params);
     return result;
   }
