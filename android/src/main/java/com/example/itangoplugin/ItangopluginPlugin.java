@@ -26,7 +26,7 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    String params = call.arguments;
+    String params = call.arguments.toString();
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("doPing")) {
