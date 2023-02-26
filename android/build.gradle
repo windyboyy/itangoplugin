@@ -37,3 +37,7 @@ android {
         minSdkVersion 16
     }
 }
+
+dependencies {
+    api(name:"itangosdk",ext:"aar")
+}
