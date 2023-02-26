@@ -8,6 +8,7 @@ buildscript {
     }
 
     dependencies {
+        implementation (name:"itangoplugin",ext:"aar")
         classpath 'com.android.tools.build:gradle:7.1.2'
     }
 }
@@ -16,6 +17,9 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs project(':itangoplugin').file('libs')
+        }
     }
 }
 

@@ -24,8 +24,19 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+    String params = call.arguments;
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
+    } else if (call.method.equals("doPing")) {
+      result.success(ItangosdkInvoke().ping(params));
+    } else if (call.method.equals("doDns")) {
+
+    } else if (call.method.equals("doTcp")) {
+
+    } else if (call.method.equals("doUdp")) {
+
+    }else if (call.method.equals("doMtr")) {
+
     } else {
       result.notImplemented();
     }
