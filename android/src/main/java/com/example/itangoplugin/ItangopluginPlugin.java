@@ -7,6 +7,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import itangosdk.Invoke;
 
 /** ItangopluginPlugin */
 public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
@@ -15,6 +16,7 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
+  Invoke invokeObj = new Invoke();
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -28,7 +30,7 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("doPing")) {
-      result.success(ItangosdkInvoke().ping(params));
+      result.success(invokeObj.ping(params));
     } else if (call.method.equals("doDns")) {
 
     } else if (call.method.equals("doTcp")) {
