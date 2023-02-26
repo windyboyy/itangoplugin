@@ -8,8 +8,8 @@ buildscript {
     }
 
     dependencies {
-        implementation(name:"itangosdk",ext:"aar")
         classpath 'com.android.tools.build:gradle:7.1.2'
+        implementation(name:"itangosdk",ext:"aar")
     }
 }
 
