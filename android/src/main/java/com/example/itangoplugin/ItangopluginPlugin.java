@@ -2,6 +2,10 @@ package com.example.itangoplugin;
 
 import androidx.annotation.NonNull;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -38,7 +42,25 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
     } else if (call.method.equals("doUdp")) {
       result.success(invokeObj.udp(params));
     }else if (call.method.equals("doMtr")) {
-      result.success(invokeObj.mtr(params));
+//      result.success(invokeObj.mtr(params));
+      Runtime mRuntime = Runtime.getRuntime();
+      try {
+        //Process中封装了返回的结果和执行错误的结果
+        Process mProcess = mRuntime.exec("/system/bin/ping -c 1 -t 1 www.qq.com");
+        BufferedReader mReader = new BufferedReader(new InputStreamReader(mProcess.getInputStream()));
+        StringBuffer mRespBuff = new StringBuffer();
+        char[] buff = new char[1024];
+        int ch = 0;
+        while ((ch = mReader.read(buff)) != -1) {
+          mRespBuff.append(buff, 0, ch);
+        }
+        mReader.close();
+        System.out.print(mRespBuff.toString());
+        result.success(mRespBuff.toString());
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     } else {
       result.notImplemented();
     }
