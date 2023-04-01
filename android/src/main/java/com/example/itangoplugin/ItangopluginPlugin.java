@@ -46,7 +46,7 @@ public class ItangopluginPlugin implements FlutterPlugin, MethodCallHandler {
     } else if (call.method.equals("doMyIp")) {
       result.success(invokeObj.myip());
     } else if (call.method.equals("doLdns")) {
-      result.success(invokeObj.ldns());
+      result.success(invokeObj.ldns(params));
     } else {
       result.notImplemented();
     }
