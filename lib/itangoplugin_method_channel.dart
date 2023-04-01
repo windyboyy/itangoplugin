@@ -48,8 +48,8 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
   }
 
   @override
-  Future<String?> doMyip() async {
-    final result = await methodChannel.invokeMethod<String>('doMyIp', "");
+  Future<String?> doMyip(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doMyIp', params);
     return result;
   }
 

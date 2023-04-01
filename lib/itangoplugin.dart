@@ -26,8 +26,8 @@ class Itangoplugin {
     return ItangopluginPlatform.instance.doMtr(params);
   }
 
-  Future<String?> doMyIp() {
-    return ItangopluginPlatform.instance.doMyIp();
+  Future<String?> doMyip(String params) {
+    return ItangopluginPlatform.instance.doMyip(params);
   }
 
   Future<String?> doLdns(String params) {
