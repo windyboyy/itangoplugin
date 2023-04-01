@@ -15,7 +15,9 @@
 @class ItangosdkGoMobileLib;
 @class ItangosdkHttp;
 @class ItangosdkInvoke;
+@class ItangosdkLdns;
 @class ItangosdkMtr;
+@class ItangosdkMyIp;
 @class ItangosdkNtp;
 @class ItangosdkPing;
 @class ItangosdkTcpPort;
@@ -80,9 +82,17 @@
  */
 - (NSString* _Nonnull)dns:(NSString* _Nullable)data;
 /**
+ * Ldns 查询ldns
+ */
+- (NSString* _Nonnull)ldns:(NSString* _Nullable)data;
+/**
  * Mtr mtr
  */
 - (NSString* _Nonnull)mtr:(NSString* _Nullable)data;
+/**
+ * Myip 查询内网ip
+ */
+- (NSString* _Nonnull)myip:(NSString* _Nullable)data;
 /**
  * Ping ping
  */
@@ -98,6 +108,22 @@
 @end
 
 /**
+ * Ldns 逻辑体
+ */
+@interface ItangosdkLdns : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+/**
+ * NewLdns 实例化
+ */
+- (nullable instancetype)init;
+// skipped method Ldns.Run with unsupported parameter or return types
+
+@end
+
+/**
  * Mtr 逻辑体
  */
 @interface ItangosdkMtr : NSObject <goSeqRefInterface> {
@@ -110,6 +136,22 @@
  */
 - (nullable instancetype)init;
 // skipped method Mtr.Run with unsupported parameter or return types
+
+@end
+
+/**
+ * MyIp 逻辑体
+ */
+@interface ItangosdkMyIp : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+/**
+ * NewMyIp 实例化
+ */
+- (nullable instancetype)init;
+// skipped method MyIp.Run with unsupported parameter or return types
 
 @end
 
@@ -223,9 +265,19 @@ FOUNDATION_EXPORT ItangosdkDns* _Nullable ItangosdkNewDns(void);
 FOUNDATION_EXPORT ItangosdkHttp* _Nullable ItangosdkNewHttp(void);
 
 /**
+ * NewLdns 实例化
+ */
+FOUNDATION_EXPORT ItangosdkLdns* _Nullable ItangosdkNewLdns(void);
+
+/**
  * NewMtr 实例化
  */
 FOUNDATION_EXPORT ItangosdkMtr* _Nullable ItangosdkNewMtr(void);
+
+/**
+ * NewMyIp 实例化
+ */
+FOUNDATION_EXPORT ItangosdkMyIp* _Nullable ItangosdkNewMyIp(void);
 
 /**
  * NewNtp 实例化
