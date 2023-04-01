@@ -25,4 +25,13 @@ class Itangoplugin {
   Future<String?> doMtr(String params) {
     return ItangopluginPlatform.instance.doMtr(params);
   }
+
+  Future<String?> doMyIp() {
+    return ItangopluginPlatform.instance.doMyIp();
+  }
+
+  Future<String?> doLdns(String params) {
+    return ItangopluginPlatform.instance.doLdns(params);
+  }
+
 }
