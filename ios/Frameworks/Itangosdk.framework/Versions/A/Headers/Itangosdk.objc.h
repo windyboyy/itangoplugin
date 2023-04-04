@@ -16,6 +16,7 @@
 @class ItangosdkHttp;
 @class ItangosdkInvoke;
 @class ItangosdkLdns;
+@class ItangosdkLdnsRet;
 @class ItangosdkMtr;
 @class ItangosdkMyIp;
 @class ItangosdkNtp;
@@ -120,6 +121,18 @@
  */
 - (nullable instancetype)init;
 // skipped method Ldns.Run with unsupported parameter or return types
+
+@end
+
+@interface ItangosdkLdnsRet : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+- (nonnull instancetype)init;
+@property (nonatomic) long code;
+@property (nonatomic) NSString* _Nonnull msg;
+// skipped field LdnsRet.Data with unsupported type: struct{Ldns string}
 
 @end
 
