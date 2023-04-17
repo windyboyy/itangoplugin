@@ -124,6 +124,9 @@
 
 @end
 
+/**
+ * LdnsRet ldns结果
+ */
 @interface ItangosdkLdnsRet : NSObject <goSeqRefInterface> {
 }
 @property(strong, readonly) _Nonnull id _ref;
