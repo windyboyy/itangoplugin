@@ -26,6 +26,8 @@ public class SwiftItangopluginPlugin: NSObject, FlutterPlugin {
             result(ItangosdkInvoke().myip(params))
         case "doLdns":
             result(ItangosdkInvoke().ldns(params))
+        case "doLookuphost":
+            result(ItangosdkInvoke().lookuphost(params))
         default:
             result("iOS " + UIDevice.current.systemVersion)
     }
