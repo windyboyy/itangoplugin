@@ -34,4 +34,7 @@ class Itangoplugin {
     return ItangopluginPlatform.instance.doLdns(params);
   }
 
+  Future<String?> doLookuphost(String params) {
+    return ItangopluginPlatform.instance.doLookuphost(params);
+  }
 }

@@ -54,4 +54,8 @@ abstract class ItangopluginPlatform extends PlatformInterface {
   Future<String?> doLdns(String params) {
     throw UnimplementedError('doLdns() has not been implemented.');
   }
+
+  Future<String?> doLookuphost(String params) {
+    throw UnimplementedError('doLookuphost() has not been implemented.');
+  }
 }

@@ -58,4 +58,10 @@ class MethodChannelItangoplugin extends ItangopluginPlatform {
     final result = await methodChannel.invokeMethod<String>('doLdns', params);
     return result;
   }
+
+  @override
+  Future<String?> doLookuphost(String params) async {
+    final result = await methodChannel.invokeMethod<String>('doLookuphost', params);
+    return result;
+  }
 }

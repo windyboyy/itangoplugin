@@ -17,6 +17,7 @@
 @class ItangosdkInvoke;
 @class ItangosdkLdns;
 @class ItangosdkLdnsRet;
+@class ItangosdkLookupHost;
 @class ItangosdkMtr;
 @class ItangosdkMyIp;
 @class ItangosdkNtp;
@@ -87,6 +88,10 @@
  */
 - (NSString* _Nonnull)ldns:(NSString* _Nullable)data;
 /**
+ * Lookuphost 解析host
+ */
+- (NSString* _Nonnull)lookuphost:(NSString* _Nullable)data;
+/**
  * Mtr mtr
  */
 - (NSString* _Nonnull)mtr:(NSString* _Nullable)data;
@@ -136,6 +141,22 @@
 @property (nonatomic) long code;
 @property (nonatomic) NSString* _Nonnull msg;
 // skipped field LdnsRet.Data with unsupported type: struct{Ldns string}
+
+@end
+
+/**
+ * LookupHost 逻辑体
+ */
+@interface ItangosdkLookupHost : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+/**
+ * NewLookupHost 实例化
+ */
+- (nullable instancetype)init;
+// skipped method LookupHost.Run with unsupported parameter or return types
 
 @end
 
@@ -284,6 +305,11 @@ FOUNDATION_EXPORT ItangosdkHttp* _Nullable ItangosdkNewHttp(void);
  * NewLdns 实例化
  */
 FOUNDATION_EXPORT ItangosdkLdns* _Nullable ItangosdkNewLdns(void);
+
+/**
+ * NewLookupHost 实例化
+ */
+FOUNDATION_EXPORT ItangosdkLookupHost* _Nullable ItangosdkNewLookupHost(void);
 
 /**
  * NewMtr 实例化
